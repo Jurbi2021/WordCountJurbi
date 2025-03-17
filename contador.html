@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter CBYK</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!-- Header com Título, Subtítulo e Controles -->
+    <header class="header">
+        <h1>Word Counter CBYK</h1>
+        <p class="header-subtitle">Ferramenta simples para contar palavras e analisar textos com precisão.</p>
+        <div class="header-content">
+            <div class="header-buttons">
+                <!-- <button id="modoComparacaoBtn">Modo Comparação</button> --> <!-- Comentado temporariamente -->
+                <button id="modoAvancadoBtn">Modo Avançado</button>
+            </div>
+            <div class="theme-toggle">
+                <input type="checkbox" id="modoNoturnoBtn">
+                <label for="modoNoturnoBtn" class="toggle-label">
+                    <span class="toggle-icon toggle-icon-sun">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="5" fill="#F59E0B"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#F59E0B" stroke-width="2"/>
+                        </svg>
+                    </span>
+                    <span class="toggle-icon toggle-icon-moon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="#60A5FA"/>
+                        </svg>
+                    </span>
+                    <span class="toggle-ball"></span>
+                </label>
+            </div>
+            <div class="theme-selector">
+                <select id="themeSelect">
+                    <option value="default">Azul</option>
+                    <option value="purple">Roxo</option>
+                    <option value="green">Verde</option>
+                    <option value="orange">Laranja</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Área de Texto e Dashboard Principal -->
+    <div class="text-dash-pair" id="text-dash-pair1">
+        <div class="text-area">
+            <label id="label-texto1" for="texto1">Texto Analisado</label>
+            <textarea id="texto1" placeholder="Digite seu texto aqui..."></textarea>
+        </div>
+        <div class="dashboard" id="dashboard1"></div>
+    </div>
+
+    <!-- Área de Comparação (Comentada por enquanto) -->
+    <!--
+    <div class="text-dash-pair hidden" id="text-dash-pair2">
+        <div class="text-area">
+            <label id="label-texto2" for="texto2">Texto de Comparação</label>
+            <textarea id="texto2" placeholder="Digite o texto de comparação aqui..."></textarea>
+        </div>
+        <div class="dashboard" id="dashboard2"></div>
+    </div>
+
+    <div class="comparison-container hidden" id="comparison-container">
+        <h3>Resultados da Comparação</h3>
+        <div class="comparison-results" id="comparison-results">
+            <p>Insira os dois textos para comparar.</p>
+        </div>
+    </div>
+    -->
+
+    <!-- Botões Flutuantes -->
+    <div class="floating-buttons">
+        <button class="export-btn" title="Exportar"><i class="fas fa-download"></i></button>
+        <button class="clear-btn" title="Limpar"><i class="fas fa-trash"></i></button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.21.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/toxicity@1.2.2/dist/toxicity.min.js"></script>
+    <!-- Adiciona jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- Adiciona html2canvas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

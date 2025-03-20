@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="/WordCountJurbi/styles.css">
 </head>
 <body>
-    <!-- Header com Título, Subtítulo e Controles -->
+    <!-- Header com Título, Subtítulo, Controles e Ticker -->
     <header class="header">
         <h1>Word Counter CBYK</h1>
         <p class="header-subtitle">Ferramenta simples para contar palavras e analisar textos com precisão.</p>
+        <div class="ticker-wrapper"></div> <!-- Local pras Dicas Rápidas -->
         <div class="header-content">
             <div class="header-buttons">
                 <!-- <button id="modoComparacaoBtn">Modo Comparação</button> --> <!-- Comentado temporariamente -->
@@ -50,6 +51,7 @@
     <div class="text-dash-pair" id="text-dash-pair1">
         <div class="text-area">
             <label id="label-texto1" for="texto1">Texto Analisado</label>
+            <div class="char-metrics"></div> <!-- Novo elemento pras métricas de caracteres -->
             <textarea id="texto1" placeholder="Digite seu texto aqui..."></textarea>
         </div>
         <div class="dashboard" id="dashboard1"></div>
@@ -60,6 +62,7 @@
     <div class="text-dash-pair hidden" id="text-dash-pair2">
         <div class="text-area">
             <label id="label-texto2" for="texto2">Texto de Comparação</label>
+            <div class="char-metrics"></div>
             <textarea id="texto2" placeholder="Digite o texto de comparação aqui..."></textarea>
         </div>
         <div class="dashboard" id="dashboard2"></div>
@@ -75,18 +78,13 @@
 
     <!-- Botões Flutuantes -->
     <div class="floating-buttons">
-        <button class="export-btn" title="Exportar"><i class="fas fa-download"></i></button>
-        <button class="clear-btn" title="Limpar"><i class="fas fa-trash"></i></button>
+        <button class="export-btn" data-tooltip="Shift + J"><i class="fas fa-download"></i></button>
+        <button class="clear-btn" data-tooltip="Shift + E"><i class="fas fa-trash"></i></button>
     </div>
 
     <!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.21.0/dist/tf.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/toxicity@1.2.2/dist/toxicity.min.js"></script>
-    <!-- Adiciona jsPDF -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<!-- Adiciona html2canvas -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="/WordCountJurbi/script.js"></script>
 </body>
 </html>
